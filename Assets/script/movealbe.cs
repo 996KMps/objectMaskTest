@@ -18,9 +18,17 @@ public class movealbe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetMouseButtonDown(0))
         {
-            agent.SetDestination(target.position);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Debug.DrawRay(Camera.main.transform.position, ray.direction * 100.0f, Color.red, 1.0f);
+
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, 100.0f, LayerMask.GetMask("Plane")))
+            {
+                agent.SetDestination(hit.point);
+                Debug.Log(hit.point);
+            }
         }
     }
 }
