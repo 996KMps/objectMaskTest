@@ -12,11 +12,11 @@ public class PlayerController : MonoBehaviour
 
 	void Start()
 	{
-		Managers.Input.KeyAction -= OnKeyboard;
-		Managers.Input.KeyAction += OnKeyboard;
-		Managers.Input.MouseAction -= OnMouseClicked;
-		Managers.Input.MouseAction += OnMouseClicked;
-	}
+        Managers.Input.KeyAction -= OnKeyboard;
+        Managers.Input.KeyAction += OnKeyboard;
+        Managers.Input.MouseAction -= OnMouseClicked;
+        Managers.Input.MouseAction += OnMouseClicked;
+    }
 
 	void Update()
 	{
